@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  sentinel-dashboard:
+    image: osmiling/sentinel-dashboard:1.8.5-redis
+    container_name: sentinel-dashboard
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    restart: always
+    ports:
+      - "8619:8619"
+    environment:
+      SERVER_PORT: 8619
+      REDIS_HOST: 192.168.2.83
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: dsk806888
+      REDIS_DATABASE: 15
+    volumes:
+        - /etc/localtime:/etc/localtime #将外边时间直接挂载到容器内部，权限只读
+        - ./logs:/root/logs

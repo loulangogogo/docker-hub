@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  xxl-job:
+    image: osmiling/xxl-job:2.4.1
+    container_name: xxl-job
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: 192.168.2.83
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: wszgr
+    volumes:
+        - /etc/localtime:/etc/localtime #将外边时间直接挂载到容器内部，权限只读
+        - ./logs:/data/applogs/xxl-job
