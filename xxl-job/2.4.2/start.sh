@@ -9,9 +9,9 @@ exec java ${JAVA_OPTS} \
   --spring.datasource.url="jdbc:mysql://${DB_HOST:-127.0.0.1}:${DB_PORT:-3306}/${DB_NAME:-xxl-job}?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai" \
   --spring.datasource.username="${DB_USER:-root}" \
   --spring.datasource.password="${DB_PASSWORD:-123456}" \
-  --spring.mail.host="${MAIL_HOST:-smtp.qq.com}" \
+  --spring.mail.host="${MAIL_HOST:-smtp.163.com}" \
   --spring.mail.port="${MAIL_PORT:-25}" \
-  --spring.mail.username="${MAIL_USER:-xxx}" \
+  --spring.mail.username="${MAIL_USER:-your_email@163.com}" \
   --spring.mail.from="${MAIL_FROM:-xxx}" \
-  --spring.mail.password="${MAIL_PASSWORD:-xxx}" \
-  --xxl.job.accessToken="${JOB_ACCESS_TOKEN:-default_token}"
+  --spring.mail.password="${MAIL_PASSWORD:-your_password_or_authorization_code}" \
+  --xxl.job.accessToken="${JOB_ACCESS_TOKEN:-}"

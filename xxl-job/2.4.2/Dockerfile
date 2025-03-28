@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-slim
+FROM --platform=linux/amd64 openjdk:8-jre-slim
 
 ## xxl-job的端口和路径
 ENV SERVER_PORT="8080"

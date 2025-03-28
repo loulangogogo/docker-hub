@@ -1,4 +1,4 @@
-FROM openjdk:17-ea-slim
+FROM --platform=linux/amd64 openjdk:17-ea-slim
 
 ## xxl-job的端口和路径
 ENV SERVER_PORT="8080"
